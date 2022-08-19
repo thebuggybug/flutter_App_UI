@@ -1,8 +1,8 @@
-import 'package:app_ui/home_page.dart';
 import 'package:app_ui/intro_screens/intro_page_1.dart';
 import 'package:app_ui/intro_screens/intro_page_2.dart';
 import 'package:app_ui/intro_screens/intro_page_3.dart';
-import 'package:app_ui/main.dart';
+import 'package:app_ui/pages/check_user_state.dart';
+import 'package:app_ui/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
@@ -42,32 +42,26 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              onLastPage ? (
-                  GestureDetector(
-                    onTap: () {
-                      _controller.jumpToPage(1);
-                      
-                    },
-
-                    child: Text("Back"),
-                  )
-              ): (
-                  GestureDetector(
-                    onTap: () {
-                      _controller.jumpToPage(2);
-                    },
-
-                    child: Text("Skip"),
-                  )
-              ),
-
+              onLastPage
+                  ? (GestureDetector(
+                      onTap: () {
+                        _controller.jumpToPage(1);
+                      },
+                      child: Text("Back"),
+                    ))
+                  : (GestureDetector(
+                      onTap: () {
+                        _controller.jumpToPage(2);
+                      },
+                      child: Text("Skip"),
+                    )),
               SmoothPageIndicator(
                 controller: _controller,
                 count: 3,
                 effect: JumpingDotEffect(
                   activeDotColor: Colors.accents.first,
-                  dotHeight: 20,
-                  dotWidth: 20,
+                  dotHeight: 18,
+                  dotWidth: 18,
                   verticalOffset: 18,
                 ),
               ),
@@ -77,7 +71,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       onTap: () {
                         Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
-                          return HomePage();
+                          return CheckUserState();
                         }));
                       },
                     ))
