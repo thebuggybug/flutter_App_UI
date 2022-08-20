@@ -1,4 +1,6 @@
+import 'package:app_ui/pages/logged_in_page.dart';
 import 'package:app_ui/pages/onboarding_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -15,7 +17,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
+      home: Scaffold(
+        body: StreamBuilder<User?>(
+          stream: FirebaseAuth.instance.authStateChanges(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              return LoggedInPage();
+            } else {
+              return OnBoardingScreen();
+            }
+          },
+        ),
+      ),
     );
   }
 }

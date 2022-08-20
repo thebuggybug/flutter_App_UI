@@ -1,3 +1,4 @@
+import 'package:app_ui/pages/forgot_password_page.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -16,23 +17,33 @@ class _LoginPageState extends State<LoginPage> {
   final _passwordController = TextEditingController();
 
   Future signIn() async {
-    // to show loading animation
-    showDialog(
-      context: context,
-      builder: (context) {
-        return Center(
-          child: CircularProgressIndicator(
-            color: Colors.greenAccent,
-          ),
-        );
-      },
-    );
+    try {
+      // to show loading animation
+      showDialog(
+        context: context,
+        builder: (context) {
+          return Center(
+            child: CircularProgressIndicator(
+              color: Colors.greenAccent,
+            ),
+          );
+        },
+      );
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim());
 
-    await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
-
-    Navigator.of(context).pop();
+      Navigator.of(context).pop();
+    } on FirebaseAuthException catch (e) {
+      print(e);
+      showDialog(
+          context: context,
+          builder: (context) {
+            return AlertDialog(
+              content: Text(e.message.toString()),
+            );
+          });
+    }
   }
 
   @override
@@ -127,6 +138,26 @@ class _LoginPageState extends State<LoginPage> {
                           labelText: ("PASSWORD"),
                           prefixIcon: Icon(Icons.lock),
                         ),
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  alignment: Alignment.bottomRight,
+                  padding: EdgeInsets.only(right: 24, top: 12),
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return ForgotPasswordPage();
+                      }));
+                    },
+                    child: Text(
+                      "Forgot Password ?",
+                      style: TextStyle(
+                        color: Colors.blue,
+                        fontSize: 14,
+                        fontWeight: FontWeight.w600,
                       ),
                     ),
                   ),

@@ -11,12 +11,6 @@ class RegisterPage extends StatefulWidget {
   State<RegisterPage> createState() => _RegisterPageState();
 }
 
-// Future signIn() async {
-//   await FirebaseAuth.instance.signInWithEmailAndPassword(
-//       email: _emailController.text.trim(),
-//       password: _passwordController.text.trim());
-// }
-
 class _RegisterPageState extends State<RegisterPage> {
   final _emailController = TextEditingController();
   final _passwordController = TextEditingController();
