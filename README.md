@@ -1,16 +1,13 @@
-# app_ui
+# Simple Login and Sign Up Screen
 
-A new Flutter project.
+The application is connected to Google Firebase so that a user can easily login or sign up with any email address (for now). If a user forgets password, a password link is sent to the respective registered email if exists or responds with exceptions message.
 
-## Getting Started
+## Project Screenshots
 
-This project is a starting point for a Flutter application.
+# Login Screen
 
-A few resources to get you started if this is your first Flutter project:
+[![Screenshot-20220824-172919-app-ui.png](https://i.postimg.cc/htgGBhVr/Screenshot-20220824-172919-app-ui.png)](https://postimg.cc/6yjKVWj2)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+# Sign up Screen
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+[![Screenshot-20220824-173233-app-ui.png](https://i.postimg.cc/qBbcgV1y/Screenshot-20220824-173233-app-ui.png)](https://postimg.cc/6TZ41SJp)
