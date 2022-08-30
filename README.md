@@ -4,10 +4,10 @@ The application is connected to Google Firebase so that a user can easily login 
 
 ## Project Screenshots
 
-# Login Screen
+# Login  and Sign up Screen
 
-[![Screenshot-20220824-172919-app-ui.png](https://i.postimg.cc/htgGBhVr/Screenshot-20220824-172919-app-ui.png)](https://postimg.cc/6yjKVWj2)
+[![Screenshot-20220824-172919-app-ui.png](https://i.postimg.cc/htgGBhVr/Screenshot-20220824-172919-app-ui.png)](https://postimg.cc/6yjKVWj2) &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; [![Screenshot-20220824-173233-app-ui.png](https://i.postimg.cc/qBbcgV1y/Screenshot-20220824-173233-app-ui.png)](https://postimg.cc/6TZ41SJp)
 
-# Sign up Screen
 
-[![Screenshot-20220824-173233-app-ui.png](https://i.postimg.cc/qBbcgV1y/Screenshot-20220824-173233-app-ui.png)](https://postimg.cc/6TZ41SJp)
+
+
